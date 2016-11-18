@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>egg-logview</title>
+    <link rel="stylesheet" href="CONFIG_HOST/element-ui/lib/theme-default/index.css">
+    <style>
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <el-row>
+        <el-col :span="5">
+          <el-tree
+            :data="files"
+            highlight-current="true"
+            node-key="path"
+            :default-checked-keys="defaultChecked"
+            @node-click="selectFile">
+          </el-tree>
+        </el-col>
+        <el-col :span="19" style="height: 100%">
+          <el-card class="box-card" v-loading.body="loading">
+            <pre style="overflow-x:auto;"><code v-text="content"></code></pre>
+          </el-card>
+        </el-col>
+      </el-row>
+    </div>
+    <script src="CONFIG_HOST/vue/dist/vue.min.js"></script>
+    <script src="CONFIG_HOST/element-ui/lib/index.js"></script>
+    <script src="CONFIG_HOST/axios/dist/axios.min.js"></script>
+    <script>
+      Vue.prototype.$http = axios;
+      axios.defaults.headers.common['Accept'] = 'application/json';
+      axios.interceptors.response.use(function (response) {
+        return response;
+      }, function (error) {
+        error = error.response.data || error;
+        ELEMENT.Message.warning(error.message || error);
+        console.error(error);
+        return Promise.reject(error);
+      });
+    </script>
+    <script>
+      var prefix = 'CONFIG_PREFIEX'; //'__logs';
+      var app = new Vue({
+        el: '#app',
+        created: function() {
+          this.listFiles();
+          if (window.location.hash) {
+            this.fetchFile(window.location.hash.substring(1));
+          }
+        },
+
+        data: function(){
+          return {
+            loading: false,
+            currentFile: {},
+            files: [],
+            defaultChecked: [ window.location.hash.substring(1) ]
+          }
+        },
+
+        computed: {
+          content: function() {
+            return this.currentFile && this.currentFile.content || 'Please select one file.';
+          }
+        },
+
+        methods: {
+          selectFile: function(data) {
+            if (!data.children) {
+              this.fetchFile(data.path);
+            }
+          },
+
+          listFiles: function() {
+            var vm = this;
+            this.$http.get('/' + prefix + '/files').then(function (response) {
+              vm.files = response.data;
+            });
+          },
+
+          fetchFile: function(file) {
+            var vm = this;
+            vm.loading = true;
+            vm.currentFile = undefined;
+            vm.currentRoute = window.location.hash = file;
+            this.$http.get('/' + prefix + '/file/' + file)
+            .then(function (response) {
+              vm.currentFile = response.data;
+              vm.loading = false;
+            })
+            .catch(function (error) {
+              vm.loading = false;
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
