@@ -36,7 +36,7 @@ $ npm i egg-logview --save
 // {app_root}/config/plugin.js
 exports.logview = {
   package: 'egg-logview',
-  // env: ['local', 'default', 'test']
+  // env: ['local', 'default', 'test', 'unittest']
 };
 ```
 
