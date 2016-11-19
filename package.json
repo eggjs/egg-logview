@@ -1,7 +1,7 @@
 {
   "name": "egg-logview",
-  "version": "0.0.1",
-  "description": "",
+  "version": "1.0.0",
+  "description": "Provide a log files viewer for egg development purpose.",
   "eggPlugin": {
     "name": "logview",
     "env": [
@@ -17,7 +17,8 @@
   "keywords": [
     "egg",
     "plugin",
-    "logger"
+    "logger",
+    "development"
   ],
   "dependencies": {
     "bytes": "^2.4.0",
