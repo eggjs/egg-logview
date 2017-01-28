@@ -15,8 +15,6 @@ module.exports = {
     'eslint',
     'eslint-config-egg',
     'supertest',
-    'intelli-espower-loader',
-    'power-assert',
     'webstorm-disable-index',
   ],
   exclude: [

@@ -22,34 +22,32 @@
   ],
   "dependencies": {
     "bytes": "^2.4.0",
-    "mz": "^2.5.0"
+    "mz": "^2.6.0"
   },
   "devDependencies": {
     "autod": "^2.7.1",
-    "egg": "^0.5.0",
-    "egg-bin": "^1.7.0",
+    "egg": "^0.9.0",
+    "egg-bin": "^2.0.2",
     "egg-ci": "^1.1.0",
-    "egg-mock": "^1.2.0",
-    "eslint": "^3.10.2",
+    "egg-mock": "^2.3.1",
+    "eslint": "^3.14.1",
     "eslint-config-egg": "^3.2.0",
-    "intelli-espower-loader": "^1.0.1",
-    "power-assert": "^1.4.2",
     "supertest": "^2.0.1",
-    "webstorm-disable-index": "^1.0.11"
+    "webstorm-disable-index": "^1.1.2"
   },
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=6.0.0"
   },
   "scripts": {
     "test": "npm run lint -- --fix && npm run test-local",
-    "test-local": "egg-bin test -r intelli-espower-loader",
-    "cov": "egg-bin cov -r intelli-espower-loader",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
     "lint": "eslint .",
     "ci": "npm run lint && npm run cov",
     "autod": "autod"
   },
   "ci": {
-    "version": "4, 6, 7"
+    "version": "6, 7"
   },
   "repository": {
     "type": "git",
