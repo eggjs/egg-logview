@@ -16,8 +16,8 @@
   ],
   "keywords": [
     "egg",
-    "plugin",
-    "logger",
+    "egg-plugin",
+    "egg-development",
     "development"
   ],
   "dependencies": {
@@ -26,13 +26,13 @@
   },
   "devDependencies": {
     "autod": "^2.7.1",
-    "egg": "^0.9.0",
-    "egg-bin": "^2.0.2",
+    "egg": "^1.0.0-rc.1",
+    "egg-bin": "^2.2.3",
     "egg-ci": "^1.1.0",
-    "egg-mock": "^2.3.1",
-    "eslint": "^3.14.1",
+    "egg-mock": "^3.0.1",
+    "eslint": "^3.16.1",
     "eslint-config-egg": "^3.2.0",
-    "supertest": "^2.0.1",
+    "supertest": "^3.0.0",
     "webstorm-disable-index": "^1.1.2"
   },
   "engines": {
@@ -57,16 +57,6 @@
     "url": "https://github.com/eggjs/egg/issues"
   },
   "homepage": "https://github.com/eggjs/egg-logview#readme",
-  "author": "",
-  "license": "MIT",
-  "boilerplate": {
-    "name": "egg-boilerplate-plugin",
-    "version": "1.5.2",
-    "description": "boilerplate for egg plugin",
-    "repository": {
-      "type": "git",
-      "url": "git@github.com:eggjs/egg-boilerplate-plugin.git"
-    },
-    "homepage": "https://github.com/eggjs/egg-boilerplate-plugin"
-  }
+  "author": "TZ <atian25@qq.com>",
+  "license": "MIT"
 }
