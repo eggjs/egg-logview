@@ -14,5 +14,6 @@ module.exports = () => {
     dir: undefined,
     staticHost: 'https://unpkg.cnpmjs.org',
   };
+
   return config;
 };
