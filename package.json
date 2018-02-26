@@ -1,6 +1,6 @@
 {
   "name": "egg-logview",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provide a log files viewer for egg development purpose.",
   "eggPlugin": {
     "name": "logview",
@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "autod": "^2.7.1",
-    "egg": "^1.0.0-rc.2",
+    "egg": "^1.0.0",
     "egg-bin": "^2.2.3",
     "egg-ci": "^1.3.0",
     "egg-mock": "^3.0.1",
