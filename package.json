@@ -12,7 +12,10 @@
     ]
   },
   "files": [
-    "app", "config", "lib", "app.js"
+    "app",
+    "lib",
+    "config",
+    "app.js"
   ],
   "keywords": [
     "egg",
@@ -21,33 +24,32 @@
     "development"
   ],
   "dependencies": {
-    "bytes": "^2.4.0",
-    "mz": "^2.6.0"
+    "bytes": "^3.0.0",
+    "mz": "^2.7.0"
   },
   "devDependencies": {
-    "autod": "^2.7.1",
-    "egg": "^1.0.0",
-    "egg-bin": "^2.2.3",
-    "egg-ci": "^1.3.0",
-    "egg-mock": "^3.0.1",
-    "eslint": "^3.16.1",
-    "eslint-config-egg": "^3.2.0",
-    "supertest": "^3.0.0",
-    "webstorm-disable-index": "^1.1.2"
+    "autod": "^3.0.1",
+    "egg": "^2.3.0",
+    "egg-bin": "^4.4.0",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.14.0",
+    "eslint": "^4.18.1",
+    "eslint-config-egg": "^7.0.0",
+    "webstorm-disable-index": "^1.2.0"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.0.0"
   },
   "scripts": {
-    "test": "npm run lint -- --fix && npm run test-local",
+    "test": "npm run lint -- --fix && egg-bin pkgfile && npm run test-local",
     "test-local": "egg-bin test",
     "cov": "egg-bin cov",
     "lint": "eslint .",
-    "ci": "npm run lint && npm run cov",
+    "ci": "npm run lint && egg-bin pkgfile --check && npm run cov",
     "autod": "autod"
   },
   "ci": {
-    "version": "6, 7"
+    "version": "8"
   },
   "repository": {
     "type": "git",

@@ -14,7 +14,6 @@ module.exports = {
     'autod',
     'eslint',
     'eslint-config-egg',
-    'supertest',
     'webstorm-disable-index',
   ],
   exclude: [
@@ -22,5 +21,4 @@ module.exports = {
     './docs',
     './coverage',
   ],
-  registry: 'https://r.cnpmjs.org',
 };

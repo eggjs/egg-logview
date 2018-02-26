@@ -9,7 +9,7 @@ module.exports = (options, app) => {
   const loggerDir = options.dir || path.dirname(app.config.logger.dir);
   const tplPath = path.join(__dirname, '../../app/public/view.html');
   const tpl = fs.readFileSync(tplPath, 'utf-8')
-      .replace(/CONFIG_PREFIEX/g, prefix).replace(/CONFIG_HOST/g, options.staticHost);
+    .replace(/CONFIG_PREFIEX/g, prefix).replace(/CONFIG_HOST/g, options.staticHost);
 
   app.logger.info(`[egg-logview] mount log ${loggerDir} at http://127.0.0.1:7001/${prefix}`);
 
