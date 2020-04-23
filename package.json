@@ -1,6 +1,6 @@
 {
   "name": "egg-logview",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Provide a log files viewer for egg development purpose.",
   "eggPlugin": {
     "name": "logview",
@@ -49,7 +49,7 @@
     "autod": "autod"
   },
   "ci": {
-    "version": "8"
+    "version": "8, 10, 12"
   },
   "repository": {
     "type": "git",

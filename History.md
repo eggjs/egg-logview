@@ -1,4 +1,13 @@
 
+2.0.1 / 2020-04-23
+==================
+
+**fixes**
+  * [[`2ff1200`](http://github.com/eggjs/egg-logview/commit/2ff1200f32fb74b5fc0525ef05eea028389b30e1)] - fix: update static remoting link to cdn.bootcss.com (#9) (liujinghan <<40572453+luasy@users.noreply.github.com>>)
+
+**others**
+  * [[`9d9fc81`](http://github.com/eggjs/egg-logview/commit/9d9fc816e9e2914bc0dd478746a64c6bafa67684)] - chore: update travis (#8) (TZ | 天猪 <<atian25@qq.com>>)
+
 2.0.0 / 2018-02-26
 ==================
 
