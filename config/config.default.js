@@ -12,7 +12,7 @@ module.exports = () => {
   config.logview = {
     prefix: '__logs',
     dir: undefined,
-    staticHost: 'https://unpkg.cnpmjs.org',
+    staticHost: 'https://cdn.bootcss.com',
   };
 
   return config;
